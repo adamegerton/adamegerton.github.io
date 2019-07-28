@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<title>Adam's Calculator</title>
+	<script>
+
+		let total = null;
+		let first = '';
+		let second = '';
+		let op = null;
+
+		function setNumber(num) {
+			console.log('num: ' + num);
+
+			if (op == null) {
+				first = first + num;
+				console.log('first: ' + first)
+
+			} else {
+				second = second + num;
+				console.log('second: ' + second)
+			}
+
+		}
+
+		function setOperator(newOp) {
+			console.log('newOp: ' + newOp);
+			op = newOp;
+		}
+
+		function doCalculate() {
+			console.log(`calculate: ${first} ${op} ${second}`);
+
+			let numFirst = Number(first)
+			let numSecond = Number(second)
+
+			if (op == '+') {
+				total = numFirst + numSecond;
+			}
+
+			if (op == '-') {
+				total = numFirst - numSecond;
+			}
+
+			if (op == '*') {
+				total = numFirst * numSecond;
+			}
+
+			if (op == '/') {
+				total = numFirst / numSecond;
+			}
+
+			alert(total);
+		}
+
+
+	</script>
+</head>
+
+<body>
+	hello
+	<br />
+	welcome to my calculator!
+
+	<div>
+		<button onclick="setNumber('7')">7</button>
+		<button onclick="setNumber('8')">8</button>
+		<button onclick="setNumber('9')">9</button>
+	</div>
+
+	<div>
+		<button onclick="setNumber('4')">4</button>
+		<button onclick="setNumber('5')">5</button>
+		<button onclick="setNumber('6')">6</button>
+	</div>
+
+	<div>
+		<button onclick="setNumber('1')">1</button>
+		<button onclick="setNumber('2')">2</button>
+		<button onclick="setNumber('3')">3</button>
+	</div>
+
+
+	<div>
+		<button onclick="setOperator('+')">+</button>
+		<button onclick="setOperator('-')">-</button>
+		<button onclick="setNumber('0')">0</button>
+	</div>
+
+	<div>
+		<button onclick="setOperator('*')">*</button>
+		<button onclick="setOperator('/')">/</button>
+		<button onclick="doCalculate()">=</button>
+	</div>
+</body>
+
+</html>
